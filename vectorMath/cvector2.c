@@ -23,6 +23,10 @@ CVector2* initCVector2(CVector2* obj, CMatrixValueType v0, CMatrixValueType v1) 
   return obj;
 }
 
+CVector2* createCVector2(CMatrixValueType v0, CMatrixValueType v1) {
+  return initCVector2(newCVector2(getCMemory()), v0, v1);
+}
+
 CMatrixValueType cvector2_crossProduct(CVector2* obj, CVector2* arg) {
   return cvector2raw_crossProduct(obj->value, arg->value);
 }

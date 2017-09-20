@@ -7,6 +7,7 @@ typedef short CMatrixIndexType;
 
 #define cmatrixAbs(x) fabsf(x)
 
+#define KVECTOR2_NAME "ve2"
+#define KVECTOR3_NAME "ve3"
 #define KVECTOR4_NAME "ve4"
-
 #endif

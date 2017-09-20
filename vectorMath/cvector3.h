@@ -1,10 +1,10 @@
-#ifndef __H_GL_VECTOR3_
-#define __H_GL_VECTOR3_
+#ifndef __H_CVector3
+#define __H_CVector3
 
 #include "core/cobject.h"
 #include "core/cmemory.h"
 #include "cmatrix_inner.h"
-#define KVECTOR3_NAME "ve4"
+
 
 typedef CMatrixValueType CVector3Raw[3];
 typedef CMatrixValueType *CVector3RawRef;
