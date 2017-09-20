@@ -13,8 +13,8 @@ Clang Vector Math Library For kyorohiro/cgame
 
 ## Rel
 - https://github.com/kyorohiro/ccore
+- https://github.com/kyorohiro/cvectorMath
 - https://github.com/kyorohiro/cgame
-
 
 ## LICENSE
 
