@@ -1,6 +1,5 @@
-
-#ifndef __H_GL_MATRIX_
-#define __H_GL_MATRIX_
+#ifndef __H_CMatrix4_Proj
+#define __H_CMatrix4_Proj
 
 #include "core/cobject.h"
 #include "core/cmemory.h"

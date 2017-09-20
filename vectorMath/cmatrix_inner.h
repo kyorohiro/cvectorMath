@@ -1,5 +1,5 @@
-#ifndef __H_GL_MATRIX_INNER_
-#define __H_GL_MATRIX_INNER_
+#ifndef __H_CMatrix4_Inner
+#define __H_CMatrix4_Inner
 
 typedef float CMatrixValueType;
 typedef float CMatrixVertexType;
