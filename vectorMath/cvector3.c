@@ -24,6 +24,10 @@ CVector3* initCVector3(CVector3* obj, CMatrixValueType v0, CMatrixValueType v1, 
   return obj;
 }
 
+CVector3* createCVector3(CMatrixValueType v0, CMatrixValueType v1, CMatrixValueType v2) {
+  return initCVector3(newCVector3(getCMemory()), v0, v1, v2);
+}
+
 CVector3* cvector3_crossProduct(CVector3* obj, CVector3* arg, CVector3* out) {
   if(out == NULL) {
     out = initCVector3(newCVector3(obj->parent.cmemory), 0.0, 0.0, 0.0);

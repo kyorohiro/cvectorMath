@@ -16,6 +16,7 @@ typedef struct {
 
 CVector3* newCVector3(CMemory*);
 CVector3* initCVector3(CVector3*, CMatrixValueType v0, CMatrixValueType v1, CMatrixValueType v2);
+CVector3* createCVector3(CMatrixValueType v0, CMatrixValueType v1, CMatrixValueType v2);
 
 CVector3* cvector3_crossProduct(CVector3* obj, CVector3* arg, CVector3* out);
 CMatrixValueType cvector3_dotProduct(CVector3* obj, CVector3* arg);
