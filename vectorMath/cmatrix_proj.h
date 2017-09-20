@@ -57,11 +57,4 @@ int cmatrix4raw_unproject(
       CVector3RawRef out);
 
 
-
-      /*
-      CVector4* cglmatrix4_unProject(
-        double wx, double wy, double wz,
-        CMatrix4* model, CMatrix4 * projection,
-        double vx, double vy, double vw, double vh);
-      */
 #endif

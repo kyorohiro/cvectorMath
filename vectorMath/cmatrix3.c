@@ -31,7 +31,8 @@ void _freeMatrix3(void* tmp) {
 CMatrix3* cmatrix3_add(CMatrix3* obj, CMatrix3* arg, CMatrix3* out) {
   int i=0;
   if(out ==NULL) {
-    out = initCMatrix3(newCMatrix3(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix3(newCMatrix3(memory));
   }
   cmatrix3raw_add(obj->value, arg->value, out->value);
   return out;
@@ -40,7 +41,8 @@ CMatrix3* cmatrix3_add(CMatrix3* obj, CMatrix3* arg, CMatrix3* out) {
 CMatrix3* cmatrix3_sub(CMatrix3* obj, CMatrix3* arg, CMatrix3* out) {
   int i=0;
   if(out ==NULL) {
-    out = initCMatrix3(newCMatrix3(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix3(newCMatrix3(memory));
   }
   cmatrix3raw_sub(obj->value, arg->value, out->value);
   return out;
@@ -48,7 +50,8 @@ CMatrix3* cmatrix3_sub(CMatrix3* obj, CMatrix3* arg, CMatrix3* out) {
 
 CMatrix3* cmatrix3_mul(CMatrix3* obj, CMatrix3* arg, CMatrix3* out) {
   if(out ==NULL) {
-    out = initCMatrix3(newCMatrix3(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix3(newCMatrix3(memory));
   }
 
   cmatrix3raw_mul(obj->value, arg->value, out->value);
@@ -58,7 +61,8 @@ CMatrix3* cmatrix3_mul(CMatrix3* obj, CMatrix3* arg, CMatrix3* out) {
 
 CVector3* cmatrix3_mulCVector3(CMatrix3* obj, CVector3* arg, CVector3* out) {
   if(out == NULL) {
-    out = initCVector3(newCVector3(obj->parent.cmemory), 0.0, 0.0, 0.0);
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCVector3(newCVector3(memory), 0.0, 0.0, 0.0);
   }
   cmatrix3raw_mulVector3Raw(obj->value, arg->value, out->value);
   return out;
@@ -89,7 +93,8 @@ CMatrixValueType cmatrix3_determinant(CMatrix3* obj) {
 //http://mathworld.wolfram.com/MatrixInverse.html
 CMatrix3* cmatrix3_inverse(CMatrix3* obj, CMatrix3* outInverse, CMatrixValueType *outDeterminant) {
   if(outInverse ==NULL) {
-    outInverse = initCMatrix3(newCMatrix3(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    outInverse = initCMatrix3(newCMatrix3(memory));
   }
   cmatrix3raw_inverse(obj->value, outInverse->value, outDeterminant);
   return outInverse;
@@ -97,7 +102,8 @@ CMatrix3* cmatrix3_inverse(CMatrix3* obj, CMatrix3* outInverse, CMatrixValueType
 
 CMatrix3* cmatrix3_transpose(CMatrix3* obj, CMatrix3* out) {
   if(out == NULL) {
-    out = initCMatrix3(newCMatrix3(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix3(newCMatrix3(memory));
   }
   cmatrix3raw_transpose(obj->value, out->value);
   return out;

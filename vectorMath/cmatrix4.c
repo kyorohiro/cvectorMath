@@ -31,7 +31,8 @@ void _freeMatrix(void* tmp) {
 CMatrix4* cmatrix4_add(CMatrix4* obj, CMatrix4* arg, CMatrix4* out) {
   int i=0;
   if(out ==NULL) {
-    out = initCMatrix4(newCMatrix4(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix4(newCMatrix4(memory));
   }
   cmatrix4raw_add(obj->value, arg->value, out->value);
   return out;
@@ -40,7 +41,8 @@ CMatrix4* cmatrix4_add(CMatrix4* obj, CMatrix4* arg, CMatrix4* out) {
 CMatrix4* cmatrix4_sub(CMatrix4* obj, CMatrix4* arg, CMatrix4* out) {
   int i=0;
   if(out ==NULL) {
-    out = initCMatrix4(newCMatrix4(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix4(newCMatrix4(memory));
   }
   cmatrix4raw_sub(obj->value, arg->value, out->value);
   return out;
@@ -48,7 +50,8 @@ CMatrix4* cmatrix4_sub(CMatrix4* obj, CMatrix4* arg, CMatrix4* out) {
 
 CMatrix4* cmatrix4_mul(CMatrix4* obj, CMatrix4* arg, CMatrix4* out) {
   if(out ==NULL) {
-    out = initCMatrix4(newCMatrix4(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix4(newCMatrix4(memory));
   }
 
   cmatrix4raw_mul(obj->value, arg->value, out->value);
@@ -58,7 +61,8 @@ CMatrix4* cmatrix4_mul(CMatrix4* obj, CMatrix4* arg, CMatrix4* out) {
 
 CVector4* cmatrix4_mulCVector4(CMatrix4* obj, CVector4* arg, CVector4* out) {
   if(out == NULL) {
-    out = initCVector4(newCVector4(obj->parent.cmemory), 0.0, 0.0, 0.0, 0.0);
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCVector4(newCVector4(memory), 0.0, 0.0, 0.0, 0.0);
   }
   cmatrix4raw_mulVector4Raw(obj->value, arg->value, out->value);
   return out;
@@ -91,7 +95,8 @@ CMatrixValueType cmatrix4_determinant(CMatrix4* obj) {
 //http://mathworld.wolfram.com/MatrixInverse.html
 CMatrix4* cmatrix4_inverse(CMatrix4* obj, CMatrix4* outInverse, CMatrixValueType *outDeterminant) {
   if(outInverse ==NULL) {
-    outInverse = initCMatrix4(newCMatrix4(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    outInverse = initCMatrix4(newCMatrix4(memory));
   }
   cmatrix4raw_inverse(obj->value, outInverse->value, outDeterminant);
   return outInverse;
@@ -99,7 +104,8 @@ CMatrix4* cmatrix4_inverse(CMatrix4* obj, CMatrix4* outInverse, CMatrixValueType
 
 CMatrix4* cmatrix4_transpose(CMatrix4* obj, CMatrix4* out) {
   if(out == NULL) {
-    out = initCMatrix4(newCMatrix4(obj->parent.cmemory));
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCMatrix4(newCMatrix4(memory));
   }
   cmatrix4raw_transpose(obj->value, out->value);
   return out;

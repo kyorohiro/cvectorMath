@@ -36,7 +36,8 @@ CMatrixValueType cvector4_length(CVector4* obj) {
 
 CVector4* cvector4_normalize(CVector4* obj, CVector4* out) {
   if(out == NULL) {
-    out = initCVector4(newCVector4(obj->parent.cmemory), 0.0, 0.0, 0.0, 0.0);
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCVector4(newCVector4(memory), 0.0, 0.0, 0.0, 0.0);
   }
   cvector4raw_normalize(obj->value, out->value);
   return out;
@@ -44,7 +45,8 @@ CVector4* cvector4_normalize(CVector4* obj, CVector4* out) {
 
 CVector4* cvector4_add(CVector4* obj, CVector4* arg, CVector4* out) {
   if(out == NULL) {
-    out = initCVector4(newCVector4(obj->parent.cmemory), 0.0, 0.0, 0.0, 0.0);
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCVector4(newCVector4(memory), 0.0, 0.0, 0.0, 0.0);
   }
   cvector4raw_add(obj->value, arg->value, out->value);
   return out;
@@ -52,7 +54,8 @@ CVector4* cvector4_add(CVector4* obj, CVector4* arg, CVector4* out) {
 
 CVector4* cvector4_sub(CVector4* obj, CVector4* arg, CVector4* out) {
   if(out == NULL) {
-    out = initCVector4(newCVector4(obj->parent.cmemory), 0.0, 0.0, 0.0, 0.0);
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCVector4(newCVector4(memory), 0.0, 0.0, 0.0, 0.0);
   }
   cvector4raw_sub(obj->value, arg->value, out->value);
   return out;
@@ -60,7 +63,8 @@ CVector4* cvector4_sub(CVector4* obj, CVector4* arg, CVector4* out) {
 
 CVector4* cvector4_mulScalar(CVector4* obj, CMatrixValueType v, CVector4* out) {
   if(out == NULL) {
-    out = initCVector4(newCVector4(obj->parent.cmemory), 0.0, 0.0, 0.0, 0.0);
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCVector4(newCVector4(memory), 0.0, 0.0, 0.0, 0.0);
   }
   cvector4raw_mulScalar(obj->value, v, out->value);
   return out;
@@ -68,7 +72,8 @@ CVector4* cvector4_mulScalar(CVector4* obj, CMatrixValueType v, CVector4* out) {
 
 CVector4* cvector4_divScalar(CVector4* obj, CMatrixValueType v, CVector4* out) {
   if(out == NULL) {
-    out = initCVector4(newCVector4(obj->parent.cmemory), 0.0, 0.0, 0.0, 0.0);
+    CMemory* memory = cobject_getCMemory((CObject*)obj);
+    out = initCVector4(newCVector4(memory), 0.0, 0.0, 0.0, 0.0);
   }
   cvector4raw_divScalar(obj->value, v, out->value);
   return out;
