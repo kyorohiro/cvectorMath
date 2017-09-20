@@ -14,9 +14,13 @@ CMatrix3* newCMatrix3(CMemory* cmemory) {
 }
 
 CMatrix3* initCMatrix3(CMatrix3* obj) {
-  initCObject((CObject*)obj, KMATRIX_NAME);
+  initCObject((CObject*)obj, KMATRIX3_NAME);
   cmatrix3_setIdentity(obj);
   return obj;
+}
+
+CMatrix3* createCMatrix3() {
+  return initCMatrix3(newCMatrix3(getCMemory()));
 }
 
 void _freeMatrix3(void* tmp) {

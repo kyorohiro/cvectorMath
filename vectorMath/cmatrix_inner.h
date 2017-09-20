@@ -12,5 +12,6 @@ typedef short CMatrixIndexType;
 #define KVECTOR4_NAME "ve4"
 
 #define KRAY_NAME "ray"
+#define KMATRIX3_NAME "kma3"
 #define KMATRIX4_NAME "kma4"
 #endif
