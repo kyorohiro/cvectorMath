@@ -17,13 +17,17 @@ CVector4* newCVector4(CMemory* cmemory) {
 }
 
 
-CVector4* initCVector4(CVector4* obj, CMatrixVertexType v0, CMatrixVertexType v1, CMatrixVertexType v2, CMatrixVertexType v3) {
+CVector4* initCVector4(CVector4* obj, CMatrixValueType v0, CMatrixValueType v1, CMatrixValueType v2, CMatrixValueType v3) {
   initCObject((CObject*)obj, KVECTOR4_NAME);
   obj->value[0] = v0;
   obj->value[1] = v1;
   obj->value[2] = v2;
   obj->value[3] = v3;
   return obj;
+}
+
+CVector4* createCVector4(CMatrixValueType v0, CMatrixValueType v1, CMatrixValueType v2, CMatrixValueType v3) {
+  return initCVector4(newCVector4(getCMemory()), v0, v1, v2, v3);
 }
 
 CMatrixValueType cvector4_length(CVector4* obj) {

@@ -5,5 +5,8 @@ typedef float CMatrixValueType;
 typedef float CMatrixVertexType;
 typedef short CMatrixIndexType;
 
-#define cmatrixAbs(x) fabsf(x) 
+#define cmatrixAbs(x) fabsf(x)
+
+#define KVECTOR4_NAME "ve4"
+
 #endif
