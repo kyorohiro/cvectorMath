@@ -10,4 +10,6 @@ typedef short CMatrixIndexType;
 #define KVECTOR2_NAME "ve2"
 #define KVECTOR3_NAME "ve3"
 #define KVECTOR4_NAME "ve4"
+
+#define KRAY_NAME "ray"
 #endif
