@@ -8,17 +8,21 @@ objExt= o
 appExt= exe
 exaExt = exe
 objLib = a
-cc = cc
+cc = gcc
 ar = ar
 
 
 rule obj
-  command=${cmd} ${cc} -c $in -o $out -I.. -I. -O2  -Wmacro-redefined
-rule test
-  command=${cmd} ${cc} $in -o $out
+  command=${cmd} ${cc} -c $in -o $out -I.. -I. -O2  
+
 rule lib
   command=${cmd} ${ar} rcs $out $in
 
+rule testCore
+  command=${cmd} ${cc} $in -o $out -L./core -lcore 
+
+rule testVectorMath
+  command=${cmd} ${cc} $in -o $out -L./core -lcore  -L./vectorMath -lvectorMath
 
 #
 # core
